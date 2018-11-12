@@ -1,7 +1,19 @@
-div {
-    display: inline-block;
+
+/* typeography */
+h1 {
+    color: teal;
 }
 
-h2 {
-    text-align: right;
+/* display settings */
+.row {
+    display: block;
+}
+
+.fight-button {
+    padding: 5px 30px;
+}
+
+/* image styling */
+img {
+    margin: 20px 20px;
 }

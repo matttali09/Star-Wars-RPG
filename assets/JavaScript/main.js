@@ -1,39 +1,63 @@
 var chosenEnemy = false;
-var chosenChampion = true;
+var chosenChampion = false;
 var attack = 0;
 var health = 0;
 var counterAttack = 0;
 
-var attributes = {
-    health: 100,
-    attack: 20,
-    counterAttack: 15,
-},
-
 var characters = {
-    getAttributes: function (attributes) {
+    getAttributes: function (char) {
         if (chosenChampion === true) {
-            attack = attributes.attack;
-            health = attributes.health;
+            attack = char.attack + 10;
+            health = char.health;
         }
         else {
-            health = attributes.health;
-            counterAttack = attributes.getCounterAttack
+            health = char.health;
+            counterAttack = char.getCounterAttack + 10;
         }
     },
-},
+    levelUp: function (char) {
+        char.attack += 10;
+        char.health += 100;
+    }
+};
 
-var specificCharacters = {
-    obiWan = {
-        
-    },// best in game
-    lukeSkywalker = {
+var characters = {
+    obiWan: {health: 150,
+        attack: 20,
+        counterAttack: 15},// best in game
+    lukeSkywalker: {health: 100,
+        attack: 30,
+        counterAttack: 20},
+    emporerPalpatine: {health: 90,
+        attack: 25,
+        counterAttack: 20}, // worst in game
+    darthVader: {health: 100,
+        attack: 25,
+        counterAttack: 20},
+};
 
-    },
-    emporerPalpatine = {
-
-    }, // worst in game
-    darthVader = {
-
-    },
-},
+// character selection
+$("#char1").on("click", function () {
+    $("#char2").appendTo($("#enemies-sect"))
+    $("#char3").appendTo($("#enemies-sect"))
+    $("#char4").appendTo($("#enemies-sect"))
+    character[chosenChampion] = true;
+})
+$("#char2").on("click", function () {
+    $("#char1").appendTo($("#enemies-sect"))
+    $("#char3").appendTo($("#enemies-sect"))
+    $("#char4").appendTo($("#enemies-sect"))
+    character[chosenChampion] = true;
+})
+$("#char3").on("click", function () {
+    $("#char1").appendTo($("#enemies-sect"))
+    $("#char2").appendTo($("#enemies-sect"))
+    $("#char4").appendTo($("#enemies-sect"))
+    character[chosenChampion] = true;
+})
+$("#char4").on("click", function () {
+    $("#char1").appendTo($("#enemies-sect"))
+    $("#char2").appendTo($("#enemies-sect"))
+    $("#char4").appendTo($("#enemies-sect"))
+    character[chosenChampion] = true;
+})

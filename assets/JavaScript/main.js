@@ -16,8 +16,8 @@ $(document).ready(function () {
             char2.counterAttack = char2.getCounterAttack + 10;
         },
         levelUp: function (char1, char2) {
-                char.attack += 10;
-                char.health += 100;
+                char1.attack += 10;
+                char1.health += 100;
         },
     };
 
@@ -94,15 +94,15 @@ $(document).ready(function () {
     if (chosenEnemy === false && chosenChampion === false) {
         $("#ememies-sect1").on("click", function () {
             $("#enemies-sect1").appendTo($("#defender-obj"));
-            $("#defender-obj").data("chosenEnemy", false);
+            $("#defender-obj").data("chosenEnemy", true);
         });
         $("#ememies-sect2").on("click", function () {
             $("#enemies-sect2").appendTo($("#defender-obj"));
-            $("#defender-obj").data("chosenEnemy", false);
+            $("#defender-obj").data("chosenEnemy", true);
         });
         $("#ememies-sect3").on("click", function () {
             $("#enemies-sect3").appendTo($("#defender-obj"));
-            $("#defender-obj").data("chosenEnemy", false);
+            $("#defender-obj").data("chosenEnemy", true);
         });
     };
 
@@ -118,6 +118,50 @@ $(document).ready(function () {
     $("#fight-button").on("click", function () {
         game($("#yourchar"), $("#defenderobj"))
     });
+
+    // obiWan div with attributes to be appended in a better way than before to allow for 
+    var obiWanDiv = $("<div id='char1' data-name='" + characters.obiWan + "'></div>");
+    console.log(obiWanDiv);
+    obiWanDiv2 = $("<div class='character-name'></div>").text("obiWan");
+    var obiWanImg = $('<img id="char1-img" src="assets/Images/obi-wan-kenobi.png" />');
+    console.log("image text")
+    
+    obiWanDiv.addClass("character3-health").text(characters.obiWan.health);
+    // luke div
+    var lukeSkywalkerDiv = $("<div id='char2' data-name='" + characters.lukeSkywalker + "'></div>");
+    console.log(lukeSkywalkerDiv);
+    console.log("it made it")
+    lukeSkywalkerDiv.addClass("character-name2").text("lukeSkywalker");
+    console.log("hurrah")
+    lukeSkywalkerDiv.prepend('<img id="char2-img" src="assets/Images/luke-skywalker.jpg" />');
+    lukeSkywalkerDiv.addClass("character3-health").text(characters.lukeSkywalker.health);
+    // darthVader div
+    var darthVaderDiv = $("<div id='char3' data-name='" + characters.darthVader + "'></div>");
+    console.log(darthVaderDiv);
+    darthVaderDiv.addClass("character-name3").text("darthVader");
+    darthVaderDiv.prepend('<img id="char3-img" src="assets/Images/darth-vader.jpg" />');
+    darthVaderDiv.addClass("character3-health").text(characters.darthVader.health);
+    // emporer palpatine div
+    var emporerPalpatineDiv = $("<div id='char4' data-name='" + characters.emporerPalpatine + "'></div>");
+    console.log(emporerPalpatineDiv);
+    emporerPalpatineDiv.addClass("character-name4").text("emporerPalpatine");
+    emporerPalpatineDiv.prepend('<img id="char4-img" src="assets/Images/palpatine.jpg" />');
+    emporerPalpatineDiv.addClass("character4-health").text(characters.emporerPalpatine.health);
+
+    $("#your-char").prepend(obiWanDiv2);
+    $("#your-char").append(obiWanImg);
+    $("#your-char").append(obiWanDiv);
+
+
+    $(obiwan)
+
+    console.log(obiWanDiv);
+    $("#your-char").append(lukeSkywalkerDiv);
+    console.log(lukeSkywalkerDiv);
+    $("#your-char").append(darthVaderDiv);
+    console.log(darthVaderDiv);
+    $("#your-char").append(emporerPalpatineDiv);
+    console.log(emporerPalpatineDiv);
 
 
 });

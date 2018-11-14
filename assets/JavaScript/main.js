@@ -6,24 +6,10 @@ $(document).ready(function () {
     var health = 0;
     var counterAttack = 0;
 
-    // run when chosing and attacking champions
-    var fightStats = {
-        getAttributes: function (char1, char2) {
-            char1.attack = char1.attack + 10;
-            char1.health = char1.health;
-
-            char2.health = char2.health;
-            char2.counterAttack = char2.getCounterAttack + 10;
-        },
-        levelUp: function (char1, char2) {
-                char1.attack += 10;
-                char1.health += 100;
-        },
-    };
-
     // game characters and starting attributes
     var characters = {
         obiWan: {
+            name: "obiWan",
             health: 150,
             attack: 20,
             counterAttack: 15,
@@ -31,6 +17,7 @@ $(document).ready(function () {
             chosenEnemy: false,
         },// best in game
         lukeSkywalker: {
+            name: "lukeSkywalker",
             health: 100,
             attack: 30,
             counterAttack: 20,
@@ -38,6 +25,7 @@ $(document).ready(function () {
             chosenEnemy: false,
         },
         darthVader: {
+            name: "lukeSkywalker",
             health: 100,
             attack: 25,
             counterAttack: 20,
@@ -45,6 +33,7 @@ $(document).ready(function () {
             chosenEnemy: false,
         },
         emporerPalpatine: {
+            name: "lukeSkywalker",
             health: 90,
             attack: 25,
             counterAttack: 20,
@@ -53,31 +42,24 @@ $(document).ready(function () {
         }, // worst in game
     };
 
-    // run on battle button
-    function battle(char1, char2) {
-        char1.health -= char2.counterAttack
-        char2.health -= char1.attack
-    };
-
-    // $("#char1").attr(character.obiWan); not sure if i can use something like this
-    // for the data-type attribute i added to the img tag or if something like this would work better.
-
-
     // character selection and moving images to select enemy section
-    if (characters.obiWan.chosenChampion === false && characters.lukeSkywalker.chosenChampion === false && characters.darthVader.chosenChampion === false && characters.emporerPalpatine.chosenChampion === false) {
-        $("#your-char1").on("click", function () {
+    $("#your-char1").on("click", function () {
+        if (characters.obiWan.chosenChampion === false && characters.lukeSkywalker.chosenChampion === false && characters.darthVader.chosenChampion === false && characters.emporerPalpatine.chosenChampion === false) {
             $("#your-char2").appendTo($("#enemies-sect"));
             $("#your-char2").attr("id", "enemies-sect1");
+            $("#enemies-sect1").css("background-color", "red");
             $("#your-char3").appendTo($("#enemies-sect"));
             $("#your-char3").attr("id", "enemies-sect2");
+            $("#enemies-sect2").css("background-color", "red");
             $("#your-char4").appendTo($("#enemies-sect"));
             $("#your-char4").attr("id", "enemies-sect3");
+            $("#enemies-sect3").css("background-color", "red");
             $("#your-char1").data('chosenChampion', true);
             characters.obiWan.chosenChampion = true;
             console.log(obiWanDiv2);
             console.log(obiWanImg);
             console.log(obiWanDiv);
-            console.log(characters.obiWan)
+            console.log(characters.obiWan);
             console.log(lukeSkywalkerDiv2);
             console.log(lukeSkywalkerImg);
             console.log(lukeSkywalkerDiv);
@@ -87,86 +69,157 @@ $(document).ready(function () {
             console.log(emporerPalpatineDiv2);
             console.log(emporerPalpatineImg);
             console.log(emporerPalpatineDiv);
-        });
-        $("#your-char2").on("click", function () {
+        }
+    });
+    $("#your-char2").on("click", function () {
+        if (characters.obiWan.chosenChampion === false && characters.lukeSkywalker.chosenChampion === false && characters.darthVader.chosenChampion === false && characters.emporerPalpatine.chosenChampion === false) {
             $("#your-char1").appendTo($("#enemies-sect"));
+            console.log("HI MOFO")
             $("#your-char1").attr("id", "enemies-sect1");
+            $("#enemies-sect1").css("background-color", "red");
             $("#your-char3").appendTo($("#enemies-sect"));
             $("#your-char3").attr("id", "enemies-sect2");
+            $("#enemies-sect2").css("background-color", "red");
             $("#your-char4").appendTo($("#enemies-sect"));
             $("#your-char4").attr("id", "enemies-sect3");
+            $("#enemies-sect3").css("background-color", "red");
             $("#your-char2").data('chosenChampion', true);
-        });
-        $("#your-char3").on("click", function () {
+            characters.lukeSkywalker.chosenChampion = true;
+        }
+    });
+    $("#your-char3").on("click", function () {
+        if (characters.obiWan.chosenChampion === false && characters.lukeSkywalker.chosenChampion === false && characters.darthVader.chosenChampion === false && characters.emporerPalpatine.chosenChampion === false) {
             $("#your-char1").appendTo($("#enemies-sect"));
             $("#your-char1").attr("id", "enemies-sect1");
+            $("#enemies-sect1").css("background-color", "red");
             $("#your-char2").appendTo($("#enemies-sect"));
             $("#your-char2").attr("id", "enemies-sect2");
+            $("#enemies-sect2").css("background-color", "red");
             $("#your-char4").appendTo($("#enemies-sect"));
             $("#your-char4").attr("id", "enemies-sect3");
+            $("#enemies-sect3").css("background-color", "red");
             $("#your-char3").data('chosenChampion', true);
-        });
-        $("#your-char4").on("click", function () {
+            characters.darthVader.chosenChampion = true;
+        }
+    });
+    $("#your-char4").on("click", function () {
+        if (characters.obiWan.chosenChampion === false && characters.lukeSkywalker.chosenChampion === false && characters.darthVader.chosenChampion === false && characters.emporerPalpatine.chosenChampion === false) {
             $("#your-char1").appendTo($("#enemies-sect"));
             $("#your-char1").attr("id", "enemies-sect1");
+            $("#enemies-sect1").css("background-color", "red");
             $("#your-char2").appendTo($("#enemies-sect"));
             $("#your-char2").attr("id", "enemies-sect2");
+            $("#enemies-sect2").css("background-color", "red");
             $("#your-char3").appendTo($("#enemies-sect"));
             $("#your-char3").attr("id", "enemies-sect3");
+            $("#enemies-sect3").css("background-color", "red");
             $("#your-char4").data('chosenChampion', true);
-        });
-    };
-
-        // second movement
-    if (characters.obiWan.chosenEnemy === false && characters.lukeSkywalker.chosenEnemy === false && characters.darthVader.chosenEnemy === false && characters.emporerPalpatine.chosenEnemy === false) {
-        $("#ememies-sect").on("click", "#ememies-sect1", function () {
-            $("#enemies-sect1").appendTo($("#defender"));
-            $("#enemies-sect1").attr("id", "defender-obj");
-            $("#defender-obj").data("chosenEnemy", true);
-        });
-        $("#ememies-sect").on("click", "#ememies-sect2", function () {
-            $("#enemies-sect2").appendTo($("#defender"));
-            $("#enemies-sect2").attr("id", "defender-obj");
-            $("#defender-obj").data("chosenEnemy", true);
-        });
-        $("#ememies-sect").on("click", "#ememies-sect3", function () {
-            $("#enemies-sect3").appendTo($("#defender"));
-            $("#enemies-sect3").attr("id", "defender-obj");
-            $("#defender-obj").data("chosenEnemy", true);
-        });
-    };
-
-    function Game(char1, char2) {
-        fightStats.getAttributes(char1, char2);
-        battle(char1, char2);
-        if (char2.health < 0) {
-            fightStats.levelUp(char1, char2);
-        };
-
-    };
-
-    $("#fight-button").on("click", function () {
-        game($("#yourchar"), $("#defenderobj"))
+            characters.emporerPalpatine.chosenChampion = true;
+        }
     });
 
-    // obiWan div with attributes to be appended in a better way than before to allow for 
+    // second movement to the enemy to attack spot (defender-obj) (only works for obiwan atthe moment because i cant get 
+    // defender1 to pick up the attribute from the container so i have to hardcode chosenEnemy true)
+    $(this).on("click", "#enemies-sect1", function () {
+        if (characters.obiWan.chosenEnemy === false && characters.lukeSkywalker.chosenEnemy === false && characters.darthVader.chosenEnemy === false && characters.emporerPalpatine.chosenEnemy === false) {
+            $("#enemies-sect1").appendTo($("#defender"));
+            $("#enemies-sect1").attr("id", "defender-obj");
+            $("#enemies-sect2").css("background-color", "grey");
+            $("#enemies-sect3").css("background-color", "grey");
+            var defender1 = $("#defender-obj").attr("data-name")
+            characters.lukeSkywalker.chosenEnemy = true;
+
+            console.log(characters.lukeSkywalker);
+            console.log($("#defender-obj"))
+        }
+    });
+    $(this).on("click", "#enemies-sect2", function () {
+        if (characters.obiWan.chosenEnemy === false && characters.lukeSkywalker.chosenEnemy === false && characters.darthVader.chosenEnemy === false && characters.emporerPalpatine.chosenEnemy === false) {
+            $("#enemies-sect2").appendTo($("#defender"));
+            $("#enemies-sect2").attr("id", "defender-obj");
+            $("#enemies-sect1").css("background-color", "grey");
+            $("#enemies-sect3").css("background-color", "grey");
+            $("#defender-obj").data("chosenEnemy", true);
+            characters.darthVader.chosenEnemy = true;
+
+            console.log(characters.lukeSkywalker);
+            console.log($("#defender-obj"))
+        }
+    });
+    $(this).on("click", "#enemies-sect3", function () {
+        if (characters.obiWan.chosenEnemy === false && characters.lukeSkywalker.chosenEnemy === false && characters.darthVader.chosenEnemy === false && characters.emporerPalpatine.chosenEnemy === false) {
+            $("#enemies-sect3").appendTo($("#defender"));
+            $("#enemies-sect3").attr("id", "defender-obj");
+            $("#enemies-sect1").css("background-color", "grey");
+            $("#enemies-sect2").css("background-color", "grey");
+            $("#defender-obj").data("chosenEnemy", true);
+            characters.emporerPalpatine.chosenEnemy = true;
+
+            console.log(characters.lukeSkywalker);
+            console.log($("#defender-obj"))
+        }
+    });
+
+    // battle functions
+    // run on battle button
+    function battle(char1, char2) {
+        char1.health -= char2.counterAttack
+        char2.health -= char1.attack
+    };
+
+    // run when chosing and attacking champions
+    var fightStats = {
+        getAttributes: function (char1, char2) {
+            char1.attack += 6;
+            char1.health = char1.health;
+
+            char2.health = char2.health;
+        },
+        levelUp: function (char1, char2) {
+            char1.health += 10;
+        },
+    };
+
+    // function to reset the chosen enemy's to false
+    function defeated() {
+        characters.obiWan.chosenEnemy = false;
+        characters.lukeSkywalker.chosenEnemy = false;
+        characters.darthVader.chosenEnemy = false;
+        characters.emporerPalpatine.chosenEnemy = false;
+    }
+
+    // to be thrown into fight button when i can pull attributes from the objects
+    var defender = $("defender-obj")
+    var yourchar = $("#yourchar")
+    $("#fight-button").on("click", function () {
+        fightStats("#yourchar", $("#defender-obj"))
+        battle($("#yourchar"), $("#defender-obj"))
+        if ($("#defender-obj").health < 0) {
+            defeated();
+            $("#defender-obj").css('display', 'none')
+        }
+    });
+
+    var battleText
+
+    // obiWan div with attributes to be appended in a better way than before to allow for it to be wrapped in a container.
     var obiWanDiv = $("<div data-name='" + characters.obiWan + "'></div>");
-    var obiWanDiv2 = $("<div class='character-name'></div>").text("Obi-Wan-Kenobi");
-    var obiWanImg = $('<img id="char1-img" src="assets/Images/obi-wan-kenobi.png" />');   
+    var obiWanDiv2 = $("<div class='character-name' data-name=" + characters.obiWan.name + " data-attack=" + characters.obiWan.attack + " data-health=" + characters.obiWan.health + "data-counterAttack=" + characters.obiWan.counterAttack + "></div>").text("Obi-Wan-Kenobi");
+    var obiWanImg = $('<img id="char1-img" src="assets/Images/obi-wan-kenobi.png" />');
     obiWanDiv.addClass("character1-health").text(characters.obiWan.health);
     // luke div
     var lukeSkywalkerDiv = $("<div data-name='" + characters.lukeSkywalker + "'></div>");
-    var lukeSkywalkerDiv2 = $("<div class='character-name2'></div>").text("Luke Skywalker");
+    var lukeSkywalkerDiv2 = $("<div class='character-name2' data-name=" + characters.lukeSkywalker.name + " data-attack=" + characters.lukeSkywalker.attack + " data-health=" + characters.lukeSkywalker.health + "data-counterAttack=" + characters.lukeSkywalker.counterAttack + "></div>").text("Luke Skywalker");
     var lukeSkywalkerImg = $('<img id="char2-img" src="assets/Images/luke-skywalker.jpg" />');
     lukeSkywalkerDiv.addClass("character2-health").text(characters.lukeSkywalker.health);
     // darthVader div
     var darthVaderDiv = $("<div data-name='" + characters.darthVader + "'></div>");
-    var darthVaderDiv2 = $("<div class='character-name2'></div>").text("Darth Vader");
+    var darthVaderDiv2 = $("<div class='character-name3' data-name=" + characters.darthVader.name + " data-attack=" + characters.darthVader.attack + " data-health=" + characters.darthVader.health + "data-counterAttack=" + characters.darthVader.counterAttack + "></div>").text("Darth Vader");
     var darthVaderImg = $('<img id="char3-img" src="assets/Images/darth-vader.jpg" />');
     darthVaderDiv.addClass("character3-health").text(characters.darthVader.health);
     // emporer palpatine div
     var emporerPalpatineDiv = $("<div data-name='" + characters.emporerPalpatine + "'></div>");
-    var emporerPalpatineDiv2 = $("<div class='character-name2'></div>").text("Emporer Palpatine");
+    var emporerPalpatineDiv2 = $("<div class='character-name4' data-name=" + characters.emporerPalpatine.name + " data-attack=" + characters.emporerPalpatine.attack + " data-health=" + characters.emporerPalpatine.health + "data-counterAttack=" + characters.emporerPalpatine.counterAttack + "></div>").text("Emporer Palpatine");
     var emporerPalpatineImg = $('<img id="char4-img" src="assets/Images/palpatine.jpg" />');
     emporerPalpatineDiv.addClass("character4-health").text(characters.emporerPalpatine.health);
 

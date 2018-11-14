@@ -4,12 +4,29 @@
     border: 1px solid black;
     width: 200px;
     padding: 0;
+    background-color: white;
 }
 
-text .container {
-    display: block;
+
+#text {
+    color: black;
+    width: 355px;
+    align-self: center;
+    text-align: center;
+    margin: auto;
+    background-color: white;
+    border: 1px solid white;
 }
+.fight-button {
+    margin: 6px 619px;
+}
+
+.battle-log {
+    float: right;
+    margin-right: 20px;
+}
+
 
 body {
-    /* background: url(http://wordpress.redirectingat.com/?id=725X1342&site=rischmoller.wordpress.com&xs=1&isjs=1&url=https%3A%2F%2Frischmoller.files.wordpress.com%2F2012%2F01%2Fstar-wars.jpg&xguid=&xuuid=1aa80ea6afc4d6803f768259a52e72f0&xsessid=&xcreo=0&xed=0&sref=https%3A%2F%2Frischmoller.wordpress.com%2F2012%2F01%2F16%2Fstar-wars-wallpaper-the-force-is-the-new-feng-shui-of-interior-design%2F&pref=https%3A%2F%2Fwww.google.com%2F&xtz=300&jv=13.12.1-stackpath&bv=2.5.1) */
+    background: url(https://www.syfy.com/sites/syfy/files/styles/1140x640/public/wire/legacy/Star-Wars-Battlefront_2015_04-16-15_002.jpg?itok=TtbscpX5&timestamp=1497663261)
 }

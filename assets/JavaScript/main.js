@@ -191,16 +191,25 @@ $(document).ready(function () {
     // to be thrown into fight button when i can pull attributes from the objects
     var defender = $("defender-obj")
     var yourchar = $("#yourchar")
+    // $("#fight-button").on("click", function () {
+    //     fightStats("#yourchar", $("#defender-obj"))
+    //     battle($("#yourchar"), $("#defender-obj"))
+    //     if ($("#defender-obj").health < 0) {
+    //         defeated();
+    //         $("#defender-obj").css('display', 'none')
+    //     }
+    // });
+    var battleText = $("#battle-log")
     $("#fight-button").on("click", function () {
-        fightStats("#yourchar", $("#defender-obj"))
-        battle($("#yourchar"), $("#defender-obj"))
-        if ($("#defender-obj").health < 0) {
+        fightStats(characters.obiWan, characters.lukeSkywalker)
+        battle(characters.obiWan, characters.lukeSkywalker)
+        if (characters.lukeSkywalker.health < 0) {
             defeated();
             $("#defender-obj").css('display', 'none')
         }
     });
 
-    var battleText
+    battleText.text("Your character attacked for " + characters.obiWan.attack + " damage and your enemy attacked you for " + characters.lukeSkywalker.counterAttack)
 
     // obiWan div with attributes to be appended in a better way than before to allow for it to be wrapped in a container.
     var obiWanDiv = $("<div data-name='" + characters.obiWan + "'></div>");

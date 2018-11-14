@@ -1,24 +1,11 @@
-
-/* typeography */
-h1 {
-    color: teal;
+.container {
+    display: inline-block;
+    text-align: center;
+    border: 1px solid black;
+    width: 200px;
+    padding: 0;
 }
 
-/* display settings */
-.row {
+text .container {
     display: block;
 }
-
-.fight-button {
-    padding: 5px 30px;
-}
-
-/* image styling */
-img {
-    margin: 0 20px;
-}
-
-.row-enemies div {
-    display: inline;
-}
-

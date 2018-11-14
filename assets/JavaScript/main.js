@@ -63,35 +63,45 @@ $(document).ready(function () {
     // for the data-type attribute i added to the img tag or if something like this would work better.
 
 
-    // character selection and movement between sections
-    if (chosenChampion === false) {
-        $("#char1").on("click", function () {
-            $("#char2").appendTo($("#enemies-sect1"));
-            $("#char3").appendTo($("#enemies-sect2"));
-            $("#char4").appendTo($("#enemies-sect3"));
-            $("#char1").data('chosenChampion', true);
+    // character selection and moving images to select enemy section
+        $("#your-char1").on("click", function () {
+            $("#your-char2").appendTo($("#enemies-sect"));
+            $("#your-char2").attr("id", "enemies-sect1");
+            $("#your-char3").appendTo($("#enemies-sect"));
+            $("#your-char3").attr("id", "enemies-sect2");
+            $("#your-char4").appendTo($("#enemies-sect"));
+            $("#your-char4").attr("id", "enemies-sect3");
+            $("#your-char1").data('chosenChampion', true);
         });
-        $("#char2").on("click", function () {
-            $("#char1").appendTo($("#enemies-sect1"));
-            $("#char3").appendTo($("#enemies-sect2"));
-            $("#char4").appendTo($("#enemies-sect3"));
-            $("#char2").data('chosenChampion', true);
+        $("#your-char2").on("click", function () {
+            $("#your-char1").appendTo($("#enemies-sect"));
+            $("#your-char1").attr("id", "enemies-sect1");
+            $("#your-char3").appendTo($("#enemies-sect"));
+            $("#your-char3").attr("id", "enemies-sect2");
+            $("#your-char4").appendTo($("#enemies-sect"));
+            $("#your-char4").attr("id", "enemies-sect3");
+            $("#your-char2").data('chosenChampion', true);
         });
-        $("#char3").on("click", function () {
-            $("#char1").appendTo($("#enemies-sect1"));
-            $("#char2").appendTo($("#enemies-sect2"));
-            $("#char4").appendTo($("#enemies-sect3"));
-            $("#char3").data('chosenChampion', true);
+        $("#your-char3").on("click", function () {
+            $("#your-char1").appendTo($("#enemies-sect"));
+            $("#your-char1").attr("id", "enemies-sect1");
+            $("#your-char2").appendTo($("#enemies-sect"));
+            $("#your-char2").attr("id", "enemies-sect2");
+            $("#your-char4").appendTo($("#enemies-sect"));
+            $("#your-char4").attr("id", "enemies-sect3");
+            $("#your-char3").data('chosenChampion', true);
         });
-        $("#char4").on("click", function () {
-            $("#char1").appendTo($("#enemies-sect1"));
-            $("#char2").appendTo($("#enemies-sect2"));
-            $("#char3").appendTo($("#enemies-sect3"));
-            $("#char4").data('chosenChampion', true);
+        $("#your-char4").on("click", function () {
+            $("#your-char1").appendTo($("#enemies-sect"));
+            $("#your-char1").attr("id", "enemies-sect1");
+            $("#your-char2").appendTo($("#enemies-sect"));
+            $("#your-char2").attr("id", "enemies-sect2");
+            $("#your-char3").appendTo($("#enemies-sect"));
+            $("#your-char3").attr("id", "enemies-sect3");
+            $("#your-char4").data('chosenChampion', true);
         });
-    };
 
-    if (chosenEnemy === false && chosenChampion === false) {
+        // second movement
         $("#ememies-sect1").on("click", function () {
             $("#enemies-sect1").appendTo($("#defender-obj"));
             $("#defender-obj").data("chosenEnemy", true);
@@ -104,7 +114,6 @@ $(document).ready(function () {
             $("#enemies-sect3").appendTo($("#defender-obj"));
             $("#defender-obj").data("chosenEnemy", true);
         });
-    };
 
     function Game(char1, char2) {
         fightStats.getAttributes(char1, char2);
@@ -115,53 +124,46 @@ $(document).ready(function () {
 
     };
 
-    $("#fight-button").on("click", function () {
-        game($("#yourchar"), $("#defenderobj"))
-    });
+    // $("#fight-button").on("click", function () {
+    //     game($("#yourchar"), $("#defenderobj"))
+    // });
 
     // obiWan div with attributes to be appended in a better way than before to allow for 
-    var obiWanDiv = $("<div id='char1' data-name='" + characters.obiWan + "'></div>");
-    console.log(obiWanDiv);
-    obiWanDiv2 = $("<div class='character-name'></div>").text("obiWan");
-    var obiWanImg = $('<img id="char1-img" src="assets/Images/obi-wan-kenobi.png" />');
-    console.log("image text")
-    
-    obiWanDiv.addClass("character3-health").text(characters.obiWan.health);
+    var obiWanDiv = $("<div data-name='" + characters.obiWan + "'></div>");
+    var obiWanDiv2 = $("<div class='character-name'></div>").text("Obi-Wan-Kenobi");
+    var obiWanImg = $('<img id="char1-img" src="assets/Images/obi-wan-kenobi.png" />');   
+    obiWanDiv.addClass("character1-health").text(characters.obiWan.health);
     // luke div
-    var lukeSkywalkerDiv = $("<div id='char2' data-name='" + characters.lukeSkywalker + "'></div>");
-    console.log(lukeSkywalkerDiv);
-    console.log("it made it")
-    lukeSkywalkerDiv.addClass("character-name2").text("lukeSkywalker");
-    console.log("hurrah")
-    lukeSkywalkerDiv.prepend('<img id="char2-img" src="assets/Images/luke-skywalker.jpg" />');
-    lukeSkywalkerDiv.addClass("character3-health").text(characters.lukeSkywalker.health);
+    var lukeSkywalkerDiv = $("<div data-name='" + characters.lukeSkywalker + "'></div>");
+    var lukeSkywalkerDiv2 = $("<div class='character-name2'></div>").text("Luke Skywalker");
+    var lukeSkywalkerImg = $('<img id="char2-img" src="assets/Images/luke-skywalker.jpg" />');
+    lukeSkywalkerDiv.addClass("character2-health").text(characters.lukeSkywalker.health);
     // darthVader div
-    var darthVaderDiv = $("<div id='char3' data-name='" + characters.darthVader + "'></div>");
-    console.log(darthVaderDiv);
-    darthVaderDiv.addClass("character-name3").text("darthVader");
-    darthVaderDiv.prepend('<img id="char3-img" src="assets/Images/darth-vader.jpg" />');
+    var darthVaderDiv = $("<div data-name='" + characters.darthVader + "'></div>");
+    var darthVaderDiv2 = $("<div class='character-name2'></div>").text("Darth Vader");
+    var darthVaderImg = $('<img id="char3-img" src="assets/Images/darth-vader.jpg" />');
     darthVaderDiv.addClass("character3-health").text(characters.darthVader.health);
     // emporer palpatine div
-    var emporerPalpatineDiv = $("<div id='char4' data-name='" + characters.emporerPalpatine + "'></div>");
-    console.log(emporerPalpatineDiv);
-    emporerPalpatineDiv.addClass("character-name4").text("emporerPalpatine");
-    emporerPalpatineDiv.prepend('<img id="char4-img" src="assets/Images/palpatine.jpg" />');
+    var emporerPalpatineDiv = $("<div data-name='" + characters.emporerPalpatine + "'></div>");
+    var emporerPalpatineDiv2 = $("<div class='character-name2'></div>").text("Emporer Palpatine");
+    var emporerPalpatineImg = $('<img id="char4-img" src="assets/Images/palpatine.jpg" />');
     emporerPalpatineDiv.addClass("character4-health").text(characters.emporerPalpatine.health);
 
-    $("#your-char").prepend(obiWanDiv2);
-    $("#your-char").append(obiWanImg);
-    $("#your-char").append(obiWanDiv);
+    $("#your-char1").append(obiWanDiv2);
+    $("#your-char1").append(obiWanImg);
+    $("#your-char1").append(obiWanDiv);
 
+    $("#your-char2").append(lukeSkywalkerDiv2);
+    $("#your-char2").append(lukeSkywalkerImg);
+    $("#your-char2").append(lukeSkywalkerDiv);
 
-    $(obiwan)
+    $("#your-char3").append(darthVaderDiv2);
+    $("#your-char3").append(darthVaderImg);
+    $("#your-char3").append(darthVaderDiv);
 
-    console.log(obiWanDiv);
-    $("#your-char").append(lukeSkywalkerDiv);
-    console.log(lukeSkywalkerDiv);
-    $("#your-char").append(darthVaderDiv);
-    console.log(darthVaderDiv);
-    $("#your-char").append(emporerPalpatineDiv);
-    console.log(emporerPalpatineDiv);
+    $("#your-char4").append(emporerPalpatineDiv2);
+    $("#your-char4").append(emporerPalpatineImg);
+    $("#your-char4").append(emporerPalpatineDiv);
 
 
 });

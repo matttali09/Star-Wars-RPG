@@ -64,6 +64,7 @@ $(document).ready(function () {
 
 
     // character selection and moving images to select enemy section
+    if (characters.obiWan.chosenChampion === false && characters.lukeSkywalker.chosenChampion === false && characters.darthVader.chosenChampion === false && characters.emporerPalpatine.chosenChampion === false) {
         $("#your-char1").on("click", function () {
             $("#your-char2").appendTo($("#enemies-sect"));
             $("#your-char2").attr("id", "enemies-sect1");
@@ -72,6 +73,19 @@ $(document).ready(function () {
             $("#your-char4").appendTo($("#enemies-sect"));
             $("#your-char4").attr("id", "enemies-sect3");
             $("#your-char1").data('chosenChampion', true);
+            console.log(obiWanDiv2);
+            console.log(obiWanImg);
+            console.log(obiWanDiv);
+            console.log(characters.obiWan)
+            console.log(lukeSkywalkerDiv2);
+            console.log(lukeSkywalkerImg);
+            console.log(lukeSkywalkerDiv);
+            console.log(darthVaderDiv2);
+            console.log(darthVaderImg);
+            console.log(darthVaderDiv);
+            console.log(emporerPalpatineDiv2);
+            console.log(emporerPalpatineImg);
+            console.log(emporerPalpatineDiv);
         });
         $("#your-char2").on("click", function () {
             $("#your-char1").appendTo($("#enemies-sect"));
@@ -100,20 +114,26 @@ $(document).ready(function () {
             $("#your-char3").attr("id", "enemies-sect3");
             $("#your-char4").data('chosenChampion', true);
         });
+    };
 
         // second movement
-        $("#ememies-sect1").on("click", function () {
-            $("#enemies-sect1").appendTo($("#defender-obj"));
+    if (characters.obiWan.chosenEnemy === false && characters.lukeSkywalker.chosenEnemy === false && characters.darthVader.chosenEnemy === false && characters.emporerPalpatine.chosenEnemy === false) {
+        $("#ememies-sect").on("click", "#ememies-sect1", function () {
+            $("#enemies-sect1").appendTo($("#defender"));
+            $("#enemies-sect1").attr("id", "defender-obj");
             $("#defender-obj").data("chosenEnemy", true);
         });
-        $("#ememies-sect2").on("click", function () {
-            $("#enemies-sect2").appendTo($("#defender-obj"));
+        $("#ememies-sect").on("click", "#ememies-sect2", function () {
+            $("#enemies-sect2").appendTo($("#defender"));
+            $("#enemies-sect2").attr("id", "defender-obj");
             $("#defender-obj").data("chosenEnemy", true);
         });
-        $("#ememies-sect3").on("click", function () {
-            $("#enemies-sect3").appendTo($("#defender-obj"));
+        $("#ememies-sect").on("click", "#ememies-sect3", function () {
+            $("#enemies-sect3").appendTo($("#defender"));
+            $("#enemies-sect3").attr("id", "defender-obj");
             $("#defender-obj").data("chosenEnemy", true);
         });
+    };
 
     function Game(char1, char2) {
         fightStats.getAttributes(char1, char2);
@@ -124,9 +144,9 @@ $(document).ready(function () {
 
     };
 
-    // $("#fight-button").on("click", function () {
-    //     game($("#yourchar"), $("#defenderobj"))
-    // });
+    $("#fight-button").on("click", function () {
+        game($("#yourchar"), $("#defenderobj"))
+    });
 
     // obiWan div with attributes to be appended in a better way than before to allow for 
     var obiWanDiv = $("<div data-name='" + characters.obiWan + "'></div>");

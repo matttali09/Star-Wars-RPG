@@ -73,6 +73,7 @@ $(document).ready(function () {
             $("#your-char4").appendTo($("#enemies-sect"));
             $("#your-char4").attr("id", "enemies-sect3");
             $("#your-char1").data('chosenChampion', true);
+            characters.obiWan.chosenChampion = true;
             console.log(obiWanDiv2);
             console.log(obiWanImg);
             console.log(obiWanDiv);

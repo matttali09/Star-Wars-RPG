@@ -55,6 +55,7 @@ $(document).ready(function () {
             $("#your-char4").attr("id", "enemies-sect3");
             $("#enemies-sect3").css("background-color", "red");
             $("#your-char1").data('chosenChampion', true);
+            $("#your-char1").css("background-color", "gold");
             characters.obiWan.chosenChampion = true;
             console.log(obiWanDiv2);
             console.log(obiWanImg);
@@ -74,7 +75,6 @@ $(document).ready(function () {
     $("#your-char2").on("click", function () {
         if (characters.obiWan.chosenChampion === false && characters.lukeSkywalker.chosenChampion === false && characters.darthVader.chosenChampion === false && characters.emporerPalpatine.chosenChampion === false) {
             $("#your-char1").appendTo($("#enemies-sect"));
-            console.log("HI MOFO")
             $("#your-char1").attr("id", "enemies-sect1");
             $("#enemies-sect1").css("background-color", "red");
             $("#your-char3").appendTo($("#enemies-sect"));
@@ -84,6 +84,7 @@ $(document).ready(function () {
             $("#your-char4").attr("id", "enemies-sect3");
             $("#enemies-sect3").css("background-color", "red");
             $("#your-char2").data('chosenChampion', true);
+            $("#your-char2").css("background-color", "gold");
             characters.lukeSkywalker.chosenChampion = true;
         }
     });
@@ -99,6 +100,7 @@ $(document).ready(function () {
             $("#your-char4").attr("id", "enemies-sect3");
             $("#enemies-sect3").css("background-color", "red");
             $("#your-char3").data('chosenChampion', true);
+            $("#your-char3").css("background-color", "gold");
             characters.darthVader.chosenChampion = true;
         }
     });
@@ -114,6 +116,7 @@ $(document).ready(function () {
             $("#your-char3").attr("id", "enemies-sect3");
             $("#enemies-sect3").css("background-color", "red");
             $("#your-char4").data('chosenChampion', true);
+            $("#your-char4").css("background-color", "gold");
             characters.emporerPalpatine.chosenChampion = true;
         }
     });
@@ -195,8 +198,13 @@ $(document).ready(function () {
     var defender = $("defender-obj")
     var yourchar = $("#yourchar")
     // $("#fight-button").on("click", function () {
-    //     fightStats("#yourchar", $("#defender-obj"))
+    //     console.log("button working");
+
+    //     fightStats.getAttributes($("#yourchar"), $("#defender-obj"))
     //     battle($("#yourchar"), $("#defender-obj"))
+    //      console.log("battle function firing!");
+    //      console.log(characters.obiWan);
+    //      console.log(characters.lukeSkywalker);       
     //     if ($("#defender-obj").health < 0) {
     //         $("#defender-obj").css('display', 'none')
     //         defeated();
@@ -220,7 +228,7 @@ $(document).ready(function () {
         console.log(characters.lukeSkywalker);
 
         
-        battleText.text("Your character attacked for " + characters.obiWan.attack + " damage and your enemy attacked you for " + characters.lukeSkywalker.counterAttack)
+        battleText.html("<p>Your character attacked for " + characters.obiWan.attack + " damage and your enemy attacked you for " + characters.lukeSkywalker.counterAttack + "</p>")
         console.log("battle text is doing something probably");
         
         if (characters.lukeSkywalker.health < 0) {
@@ -233,22 +241,22 @@ $(document).ready(function () {
     // obiWan div with attributes to be appended in a better way than before to allow for it to be wrapped in a container.
     var obiWanDiv = $("<div data-name='" + characters.obiWan + "'></div>");
     var obiWanDiv2 = $("<div class='character-name' data-name=" + characters.obiWan.name + " data-attack=" + characters.obiWan.attack + " data-health=" + characters.obiWan.health + " data-counterAttack=" + characters.obiWan.counterAttack + "></div>").text("Obi-Wan-Kenobi");
-    var obiWanImg = $('<img id="char1-img" src="assets/Images/obi-wan-kenobi.png" />');
+    var obiWanImg = $('<img id="char1-img" height="100" src="assets/Images/obi-wan-kenobi.png" />');
     obiWanDiv.addClass("character1-health").text(characters.obiWan.health);
     // luke div
     var lukeSkywalkerDiv = $("<div data-name='" + characters.lukeSkywalker + "'></div>");
     var lukeSkywalkerDiv2 = $("<div class='character-name2' data-name=" + characters.lukeSkywalker.name + " data-attack=" + characters.lukeSkywalker.attack + " data-health=" + characters.lukeSkywalker.health + " data-counterAttack=" + characters.lukeSkywalker.counterAttack + "></div>").text("Luke Skywalker");
-    var lukeSkywalkerImg = $('<img id="char2-img" src="assets/Images/luke-skywalker.jpg" />');
+    var lukeSkywalkerImg = $('<img id="char2-img" height="100" src="assets/Images/luke-skywalker.jpg" />');
     lukeSkywalkerDiv.addClass("character2-health").text(characters.lukeSkywalker.health);
     // darthVader div
     var darthVaderDiv = $("<div data-name='" + characters.darthVader + "'></div>");
     var darthVaderDiv2 = $("<div class='character-name3' data-name=" + characters.darthVader.name + " data-attack=" + characters.darthVader.attack + " data-health=" + characters.darthVader.health + " data-counterAttack=" + characters.darthVader.counterAttack + "></div>").text("Darth Vader");
-    var darthVaderImg = $('<img id="char3-img" src="assets/Images/darth-vader.jpg" />');
+    var darthVaderImg = $('<img id="char3-img" height="100" src="assets/Images/darth-vader.jpg" />');
     darthVaderDiv.addClass("character3-health").text(characters.darthVader.health);
     // emporer palpatine div
     var emporerPalpatineDiv = $("<div data-name='" + characters.emporerPalpatine + "'></div>");
     var emporerPalpatineDiv2 = $("<div class='character-name4' data-name=" + characters.emporerPalpatine.name + " data-attack=" + characters.emporerPalpatine.attack + " data-health=" + characters.emporerPalpatine.health + " data-counterAttack=" + characters.emporerPalpatine.counterAttack + "></div>").text("Emporer Palpatine");
-    var emporerPalpatineImg = $('<img id="char4-img" src="assets/Images/palpatine.jpg" />');
+    var emporerPalpatineImg = $('<img id="char4-img" height="100" src="assets/Images/palpatine.jpg" />');
     emporerPalpatineDiv.addClass("character4-health").text(characters.emporerPalpatine.health);
 
     $("#your-char1").append(obiWanDiv2);

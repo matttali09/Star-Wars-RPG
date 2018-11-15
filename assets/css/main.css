@@ -3,6 +3,7 @@
     text-align: center;
     border: 1px solid black;
     width: 200px;
+    margin: 3px auto;
     padding: 0;
     background-color: white;
 }
@@ -10,27 +11,36 @@
 
 #text {
     color: black;
-    width: 355px;
+    width: 254px;
     align-self: center;
     text-align: center;
-    margin: auto;
-    background-color: white;
-    border: 1px solid white;
+    margin: 3px auto;
+    background-color: blue;
+    border: 1px solid black;
 }
 #fight-button {
     margin: 6px 619px;
 }
 
 .battle-log {
+    position: absolute;
+    right: 100px;
+    top: 482px;
     float: right;
-    margin-right: 20px;
 }
 
 #defender-obj {
+    position: relative;
     margin-left: 566px;
 }
 
 
 body {
     background: url(https://www.syfy.com/sites/syfy/files/styles/1140x640/public/wire/legacy/Star-Wars-Battlefront_2015_04-16-15_002.jpg?itok=TtbscpX5&timestamp=1497663261)
+}
+
+#header {
+    width: 274px;
+    float: right;
+    background-color: aqua;
 }

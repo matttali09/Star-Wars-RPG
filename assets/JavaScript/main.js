@@ -232,22 +232,22 @@ $(document).ready(function () {
 
     // obiWan div with attributes to be appended in a better way than before to allow for it to be wrapped in a container.
     var obiWanDiv = $("<div data-name='" + characters.obiWan + "'></div>");
-    var obiWanDiv2 = $("<div class='character-name' data-name=" + characters.obiWan.name + " data-attack=" + characters.obiWan.attack + " data-health=" + characters.obiWan.health + "data-counterAttack=" + characters.obiWan.counterAttack + "></div>").text("Obi-Wan-Kenobi");
+    var obiWanDiv2 = $("<div class='character-name' data-name=" + characters.obiWan.name + " data-attack=" + characters.obiWan.attack + " data-health=" + characters.obiWan.health + " data-counterAttack=" + characters.obiWan.counterAttack + "></div>").text("Obi-Wan-Kenobi");
     var obiWanImg = $('<img id="char1-img" src="assets/Images/obi-wan-kenobi.png" />');
     obiWanDiv.addClass("character1-health").text(characters.obiWan.health);
     // luke div
     var lukeSkywalkerDiv = $("<div data-name='" + characters.lukeSkywalker + "'></div>");
-    var lukeSkywalkerDiv2 = $("<div class='character-name2' data-name=" + characters.lukeSkywalker.name + " data-attack=" + characters.lukeSkywalker.attack + " data-health=" + characters.lukeSkywalker.health + "data-counterAttack=" + characters.lukeSkywalker.counterAttack + "></div>").text("Luke Skywalker");
+    var lukeSkywalkerDiv2 = $("<div class='character-name2' data-name=" + characters.lukeSkywalker.name + " data-attack=" + characters.lukeSkywalker.attack + " data-health=" + characters.lukeSkywalker.health + " data-counterAttack=" + characters.lukeSkywalker.counterAttack + "></div>").text("Luke Skywalker");
     var lukeSkywalkerImg = $('<img id="char2-img" src="assets/Images/luke-skywalker.jpg" />');
     lukeSkywalkerDiv.addClass("character2-health").text(characters.lukeSkywalker.health);
     // darthVader div
     var darthVaderDiv = $("<div data-name='" + characters.darthVader + "'></div>");
-    var darthVaderDiv2 = $("<div class='character-name3' data-name=" + characters.darthVader.name + " data-attack=" + characters.darthVader.attack + " data-health=" + characters.darthVader.health + "data-counterAttack=" + characters.darthVader.counterAttack + "></div>").text("Darth Vader");
+    var darthVaderDiv2 = $("<div class='character-name3' data-name=" + characters.darthVader.name + " data-attack=" + characters.darthVader.attack + " data-health=" + characters.darthVader.health + " data-counterAttack=" + characters.darthVader.counterAttack + "></div>").text("Darth Vader");
     var darthVaderImg = $('<img id="char3-img" src="assets/Images/darth-vader.jpg" />');
     darthVaderDiv.addClass("character3-health").text(characters.darthVader.health);
     // emporer palpatine div
     var emporerPalpatineDiv = $("<div data-name='" + characters.emporerPalpatine + "'></div>");
-    var emporerPalpatineDiv2 = $("<div class='character-name4' data-name=" + characters.emporerPalpatine.name + " data-attack=" + characters.emporerPalpatine.attack + " data-health=" + characters.emporerPalpatine.health + "data-counterAttack=" + characters.emporerPalpatine.counterAttack + "></div>").text("Emporer Palpatine");
+    var emporerPalpatineDiv2 = $("<div class='character-name4' data-name=" + characters.emporerPalpatine.name + " data-attack=" + characters.emporerPalpatine.attack + " data-health=" + characters.emporerPalpatine.health + " data-counterAttack=" + characters.emporerPalpatine.counterAttack + "></div>").text("Emporer Palpatine");
     var emporerPalpatineImg = $('<img id="char4-img" src="assets/Images/palpatine.jpg" />');
     emporerPalpatineDiv.addClass("character4-health").text(characters.emporerPalpatine.health);
 

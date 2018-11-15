@@ -1,10 +1,21 @@
 $(document).ready(function () {
     //globals
+    var themeAudio = document.createElement("audio");
+    themeAudio.setAttribute("src", "assets/StarWarsAudio/star-wars-theme.mp3");
+    var ewokAudio = document.createElement("audio");
+    ewokAudio.setAttribute("src", "assets/StarWarsAudio/parade-of-ewoks-snip.mp3");
+    var imperialMarchAudio = document.createElement("audio");
+    imperialMarchAudio.setAttribute("src", "assets/StarWarsAudio/imperial-march.mp3");
     var chosenEnemy = false;
     var chosenChampion = false;
     var attack = 0;
     var health = 0;
     var counterAttack = 0;
+
+    $(".theme-button").on("click", function() {
+        themeAudio.play();
+      });
+    console.log(themeAudio)
 
     // game characters and starting attributes
     var characters = {
@@ -57,6 +68,8 @@ $(document).ready(function () {
             $("#your-char1").data('chosenChampion', true);
             $("#your-char1").css("background-color", "gold");
             characters.obiWan.chosenChampion = true;
+            themeAudio.pause();
+            ewokAudio.play();
             console.log(obiWanDiv2);
             console.log(obiWanImg);
             console.log(obiWanDiv);
@@ -86,6 +99,8 @@ $(document).ready(function () {
             $("#your-char2").data('chosenChampion', true);
             $("#your-char2").css("background-color", "gold");
             characters.lukeSkywalker.chosenChampion = true;
+            themeAudio.pause();
+            ewokAudio.play();
         }
     });
     $("#your-char3").on("click", function () {
@@ -102,6 +117,8 @@ $(document).ready(function () {
             $("#your-char3").data('chosenChampion', true);
             $("#your-char3").css("background-color", "gold");
             characters.darthVader.chosenChampion = true;
+            themeAudio.pause();
+            ewokAudio.play();
         }
     });
     $("#your-char4").on("click", function () {
@@ -118,6 +135,8 @@ $(document).ready(function () {
             $("#your-char4").data('chosenChampion', true);
             $("#your-char4").css("background-color", "gold");
             characters.emporerPalpatine.chosenChampion = true;
+            themeAudio.pause();
+            ewokAudio.play();
         }
     });
 
@@ -131,6 +150,8 @@ $(document).ready(function () {
             $("#enemies-sect3").css("background-color", "grey");
             var defender1 = $("#defender-obj").attr("data-name")
             characters.lukeSkywalker.chosenEnemy = true;
+            ewokAudio.pause();
+            imperialMarchAudio.play();
 
             console.log(characters.lukeSkywalker);
             console.log($("#defender-obj"))
@@ -144,6 +165,8 @@ $(document).ready(function () {
             $("#enemies-sect3").css("background-color", "grey");
             $("#defender-obj").data("chosenEnemy", true);
             characters.darthVader.chosenEnemy = true;
+            ewokAudio.pause();
+            imperialMarchAudio.play();
 
             console.log(characters.lukeSkywalker);
             console.log($("#defender-obj"))
@@ -157,6 +180,8 @@ $(document).ready(function () {
             $("#enemies-sect2").css("background-color", "grey");
             $("#defender-obj").data("chosenEnemy", true);
             characters.emporerPalpatine.chosenEnemy = true;
+            ewokAudio.pause();
+            imperialMarchAudio.play();
 
             console.log(characters.lukeSkywalker);
             console.log($("#defender-obj"))

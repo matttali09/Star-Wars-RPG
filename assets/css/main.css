@@ -44,3 +44,10 @@ body {
     float: right;
     background-color: aqua;
 }
+
+.theme-button {
+    float: left;
+    padding: 0;
+    height: 30px;
+    margin-left: 20px;
+}

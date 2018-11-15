@@ -204,8 +204,8 @@ $(document).ready(function () {
 
             char2.health = char2.health;
         },
-        levelUp: function (char1, char2) {
-            char1.health += 10;
+        levelUp: function (char1) {
+            char1.health += 30;
         },
     };
 
@@ -220,7 +220,7 @@ $(document).ready(function () {
         $("#enemies-sect3").css("background-color", "red");
     }
 
-    // to be thrown into fight button when i can pull attributes from the objects
+    // to be thrown into fight button when i can pull attributes from the objects (one day imma get the below fight function to work :( }
     var defender = $("defender-obj")
     var yourchar = $("#yourchar")
     // $("#fight-button").on("click", function () {
@@ -261,7 +261,9 @@ $(document).ready(function () {
         
         if (characters.lukeSkywalker.health < 0) {
             fightStats.levelUp(characters.obiWan)
+            obiWanDiv.text(characters.obiWan.health);
             $("#defender-obj").css('display', 'none')
+            $(".battle-log").html("<p>You defeated Luke Skywalker!!!</p>")
             defeated();
         }
     }});
@@ -285,7 +287,9 @@ $(document).ready(function () {
         
         if (characters.darthVader.health < 0) {
             fightStats.levelUp(characters.obiWan)
+            obiWanDiv.text(characters.obiWan.health);
             $("#defender-obj").css('display', 'none')
+            $(".battle-log").html("<p>You defeated Darth Vader!!!</p>")
             defeated();
         }
     }});
@@ -309,7 +313,9 @@ $(document).ready(function () {
         
         if (characters.emporerPalpatine.health < 0) {
             fightStats.levelUp(characters.obiWan)
+            obiWanDiv.text(characters.obiWan.health);
             $("#defender-obj").css('display', 'none')
+            $(".battle-log").html("<p>You defeated Emporer Palpatine!!!</p>")
             defeated();
         }
     }});

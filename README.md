@@ -1,2 +1,6 @@
-# unit-4-game
-RPG game for unit 4 in jQuery html and css
+# Star-Wars-RPG-game
+RPG game in jQuery html and css
+
+Here's how the game works
+
+src("assets/images/beginning-game-screenshot.PNG")

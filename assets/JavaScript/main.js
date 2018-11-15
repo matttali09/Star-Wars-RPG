@@ -186,6 +186,9 @@ $(document).ready(function () {
         characters.lukeSkywalker.chosenEnemy = false;
         characters.darthVader.chosenEnemy = false;
         characters.emporerPalpatine.chosenEnemy = false;
+        $("#enemies-sect1").css("background-color", "red");
+        $("#enemies-sect2").css("background-color", "red");
+        $("#enemies-sect3").css("background-color", "red");
     }
 
     // to be thrown into fight button when i can pull attributes from the objects
@@ -195,21 +198,37 @@ $(document).ready(function () {
     //     fightStats("#yourchar", $("#defender-obj"))
     //     battle($("#yourchar"), $("#defender-obj"))
     //     if ($("#defender-obj").health < 0) {
-    //         defeated();
     //         $("#defender-obj").css('display', 'none')
+    //         defeated();
     //     }
     // });
+
+    // initialize battle log
     var battleText = $("#battle-log")
+
+    // fight battle with button and function
     $("#fight-button").on("click", function () {
-        fightStats(characters.obiWan, characters.lukeSkywalker)
+        console.log("button working");
+        
+        fightStats.getAttributes(characters.obiWan, characters.lukeSkywalker);
+        console.log("fightStats function working");
         battle(characters.obiWan, characters.lukeSkywalker)
+        obiWanDiv.text(characters.obiWan.health);
+        lukeSkywalkerDiv.text(characters.lukeSkywalker.health);
+        console.log("battle function firing!");
+        console.log(characters.obiWan);
+        console.log(characters.lukeSkywalker);
+
+        
+        battleText.text("Your character attacked for " + characters.obiWan.attack + " damage and your enemy attacked you for " + characters.lukeSkywalker.counterAttack)
+        console.log("battle text is doing something probably");
+        
         if (characters.lukeSkywalker.health < 0) {
-            defeated();
+            fightStats.levelUp(characters.obiWan)
             $("#defender-obj").css('display', 'none')
+            defeated();
         }
     });
-
-    battleText.text("Your character attacked for " + characters.obiWan.attack + " damage and your enemy attacked you for " + characters.lukeSkywalker.counterAttack)
 
     // obiWan div with attributes to be appended in a better way than before to allow for it to be wrapped in a container.
     var obiWanDiv = $("<div data-name='" + characters.obiWan + "'></div>");

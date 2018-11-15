@@ -240,9 +240,9 @@ $(document).ready(function () {
     // initialize battle log
 
 
-    // fight battle with button and function
+    // fight battle with button and function (yayyy hardcode out every single fight)
     $("#fight-button").on("click", function () {
-        if (characters.obiWan.chosenEnemy === true || characters.lukeSkywalker.chosenEnemy === true || characters.darthVader.chosenEnemy === true || characters.emporerPalpatine.chosenEnemy === true) {
+        if (characters.obiWan.chosenChampion === true && characters.lukeSkywalker.chosenEnemy) {
         console.log("button working");
         lightSaberAudio.play();
         
@@ -256,7 +256,7 @@ $(document).ready(function () {
         console.log(characters.lukeSkywalker);
 
         
-        $("#battle-log").html("<p>Your character attacked for " + characters.obiWan.attack + " damage and your enemy attacked you for " + characters.lukeSkywalker.counterAttack + "</p>")
+        $(".battle-log").html("<p>Your character attacked for " + characters.obiWan.attack + " damage and your enemy attacked you for " + characters.lukeSkywalker.counterAttack + "</p>")
         console.log("battle text is doing something probably");
         
         if (characters.lukeSkywalker.health < 0) {
@@ -265,6 +265,55 @@ $(document).ready(function () {
             defeated();
         }
     }});
+    $("#fight-button").on("click", function () {
+        if (characters.obiWan.chosenChampion === true && characters.darthVader.chosenEnemy === true) {
+        console.log("button working");
+        lightSaberAudio.play();
+        
+        fightStats.getAttributes(characters.obiWan, characters.darthVader);
+        console.log("fightStats function working");
+        battle(characters.obiWan, characters.darthVader)
+        obiWanDiv.text(characters.obiWan.health);
+        darthVaderDiv.text(characters.darthVader.health);
+        console.log("battle function firing!");
+        console.log(characters.obiWan);
+        console.log(characters.darthVader);
+
+        
+        $(".battle-log").html("<p>Your character attacked for " + characters.obiWan.attack + " damage and your enemy attacked you for " + characters.darthVader.counterAttack + "</p>")
+        console.log("battle text is doing something probably");
+        
+        if (characters.darthVader.health < 0) {
+            fightStats.levelUp(characters.obiWan)
+            $("#defender-obj").css('display', 'none')
+            defeated();
+        }
+    }});
+    $("#fight-button").on("click", function () {
+        if (characters.obiWan.chosenChampion === true && characters.emporerPalpatine.chosenEnemy === true) {
+        console.log("button working");
+        lightSaberAudio.play();
+        
+        fightStats.getAttributes(characters.obiWan, characters.emporerPalpatine);
+        console.log("fightStats function working");
+        battle(characters.obiWan, characters.emporerPalpatine)
+        obiWanDiv.text(characters.obiWan.health);
+        emporerPalpatineDiv.text(characters.emporerPalpatine.health);
+        console.log("battle function firing!");
+        console.log(characters.obiWan);
+        console.log(characters.emporerPalpatine);
+
+        
+        $(".battle-log").html("<p>Your character attacked for " + characters.obiWan.attack + " damage and your enemy attacked you for " + characters.emporerPalpatine.counterAttack + "</p>")
+        console.log("battle text is doing something probably");
+        
+        if (characters.emporerPalpatine.health < 0) {
+            fightStats.levelUp(characters.obiWan)
+            $("#defender-obj").css('display', 'none')
+            defeated();
+        }
+    }});
+   
 
     // obiWan div with attributes to be appended in a better way than before to allow for it to be wrapped in a container.
     var obiWanDiv = $("<div data-name='" + characters.obiWan + "'></div>");
@@ -290,6 +339,7 @@ $(document).ready(function () {
     $("#your-char1").append(obiWanDiv2);
     $("#your-char1").append(obiWanImg);
     $("#your-char1").append(obiWanDiv);
+    console.log($("#your-char1").attr("data", "attack"))
 
     $("#your-char2").append(lukeSkywalkerDiv2);
     $("#your-char2").append(lukeSkywalkerImg);

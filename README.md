@@ -3,15 +3,16 @@ RPG game in jQuery html and css
 
 Here's how the game works!!
 
-![beginning-game-screenshot](assets/Images/beginning-game-screenshot.PNG?raw=true "beginning-game-screenshot")
-![input-ingredients](assets/images/input-ingredients.PNG?raw=true "input-ingredients")
+1. Click on a picture to choose your Champion:
 
-click on a picture to choose your Champion
+![beginning-game-screenshot](assets/Images/beginning-game-screenshot.PNG?raw=true "beginning-game-screenshot")
+
+
 
 ![choose-your-enemy](assets/Images/choose-your-enemy.PNG?raw=true "choose-your-enemy")
 
 
-click on a picture in the enemies section to pick your first enemy
+2. Click on a picture in the enemies section to pick your first enemy
 
 ![battle-screenshot](assets/Images/battle-screenshot.PNG?raw=true "battle-screenshot")
 

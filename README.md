@@ -9,7 +9,7 @@ Here's how the game works!!
 
 
 
-![choose-your-enemy](assets/Images/choose-your-enemy.PNG?raw=true "choose-your-enemy")
+![choose-your-enemy](assets/Images/choose-your-enemy-screenshot.PNG?raw=true "choose-your-enemy")
 
 
 2. Click on a picture in the enemies section to pick your first enemy
